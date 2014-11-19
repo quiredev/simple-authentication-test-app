@@ -1,0 +1,26 @@
+extends layout
+block content
+block modal
+  div.modal-dialog
+    div.modal-content
+      form.form-horizontal(role="form" action="/signin" method="post")
+        div.modal-header
+          h4.modal-title Please sign in
+        div.modal-body
+          div.form-group
+            label.col-sm-3.control-label(for="email") Email:
+            div.col-sm-9
+              input#email.form-control(type="text" name="email" value= messages.email placeholder="Enter email")
+          div.form-group
+            label.col-sm-3.control-label(for="password") Password:
+            div.col-sm-9
+              input#password.form-control(type="password" name="password" placeholder="Enter password")
+          if messages.errors
+            div.alert.alert-warning.alert-dismissible.fade.in
+              button.close(type="button" data-dismiss="alert")
+                span(aria-hidden="true") &times;
+                span.sr-only Close
+              h4 !{messages.errors}
+              span !{messages.error}
+        div.modal-footer
+          button.btn.btn-success(type="submit") Sign In

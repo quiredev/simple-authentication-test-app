@@ -1,0 +1,9 @@
+extends layout
+block content
+  div.jumbotron
+    h1 Simple Test Authentication App
+    p This example is simple, unobtrusive authentication for Node.js.
+    div.btn-toolbar
+      if !user
+        a.btn.btn-lg.btn-primary(href="/signup" role="button") Sign Up
+      a.btn.btn-lg.btn-default(href="/about" role="button") Learn More

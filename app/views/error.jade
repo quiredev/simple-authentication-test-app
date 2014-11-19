@@ -1,0 +1,12 @@
+extends layout
+block content
+  div.jumbotron
+    h1 Error: #{error.status}
+    h2= error.message
+    div.alert.alert-danger
+      span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
+      span.sr-only Error:
+      if error.status == 404
+        |   The requested page could not be found but may be available again in the future
+      if error.status == 500
+        |   A generic error message, given when no more specific message is suitable

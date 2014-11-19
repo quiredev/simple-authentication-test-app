@@ -1,0 +1,10 @@
+extends layout
+block content
+  div.jumbotron
+    h1 Profile
+    h3 Your username:
+      div.alert.alert-success
+        span= user.username
+    h3 Email:
+      div.alert.alert-success
+        span= user.email
